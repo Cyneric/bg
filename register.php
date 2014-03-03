@@ -24,7 +24,7 @@
                 	<div class="panel-title">Registrieren:</div>
                     <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="login.php">Einloggen</a></div>
                 </div>  
-                <div class="panel-body" >
+                <div class="panel-body">
                 	<form action="login.php" id="signupform" class="form-horizontal" role="form">          
 	               		<div id="signupalert" style="display:none" class="alert alert-danger">
 	                    	<p>Error:</p>

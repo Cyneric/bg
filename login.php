@@ -3,28 +3,54 @@
       session_start();
 
       $username = $_POST['username'];
-      $passwort = $_POST['password'];
+      $password = $_POST['password'];
 
       $hostname = $_SERVER['HTTP_HOST'];
       $path = dirname($_SERVER['PHP_SELF']);
+      
+      
+      //database connection - request user
+      $con = mysqli_connect("localhost","root","root","browsergame");
+      // Check connection
+      if (mysqli_connect_errno()){
+      	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      }
+
+      $dbuser = mysqli_real_escape_string($con, $username);
+      $dbpass = mysqli_real_escape_string($con, $password);
+      
+      $result = mysqli_query($con,"SELECT * FROM account WHERE username = '$dbuser' AND password = '$dbpass'");
+      mysqli_close($con);
+      
+      while($row = mysqli_fetch_array($result))
+      {
+      	if(!empty($row['username'])){
+      		$user =	$row['username'];
+      		$pass =	$row['password'];
+      	}
+      	else break;
+      }
+      
      
      //check login data
-      if ($username == 'test' && $passwort == 'test') {
-       $_SESSION['logged_in'] = true;
+      if (isset($user) && isset($password) && $username == $user && $password == $pass) {
+      	$_SESSION['logged_in'] = true;
+      	$_SESSION['user'] = $user;
 
-       // forwarding to index
-       if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {
-        if (php_sapi_name() == 'cgi') {
-         header('Status: 303 See Other');
-         }
-        else {
-         header('HTTP/1.1 303 See Other');
-         }
+       	// forwarding to index
+       	if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {
+	        if (php_sapi_name() == 'cgi') {
+	        	header('Status: 303 See Other');
+	        }
+	        else {
+	         	header('HTTP/1.1 303 See Other');
+	        }
         }
 
-       header('Location: http://'.$hostname.($path == '/' ? '' : $path).'/index.php');
-       exit;
+       	header('Location: http://'.$hostname.($path == '/' ? '' : $path).'/index.php');
+       	exit;
        }
+       else $auth_failed = TRUE;
       }
 ?>
 
@@ -59,12 +85,13 @@
                     <form action="login.php" method="post" id="loginform" class="form-horizontal" role="form">                                   
                     	<div style="margin-bottom: 25px" class="input-group">
                         	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Benutzername">                                        
+                            <input id="login-username" type="text" class="form-control" name="username" placeholder="Benutzername">                                        
                         </div>                                
                         <div style="margin-bottom: 25px" class="input-group">
                         	<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                          	<input id="login-password" type="password" class="form-control" name="password" placeholder="Passwort">
-                        </div>                                   
+                        </div>    
+                        <?php if($auth_failed)echo "<div class='alert alert-danger'>Benutzername oder Passwort falsch!</div>"?>                               
                         <div style="margin-top:10px" class="form-group">
                         	<div class="col-sm-12 controls">
                             	<input type="submit" id="btn-login" class="btn btn-success" value="Login">

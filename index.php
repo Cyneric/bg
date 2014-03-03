@@ -14,21 +14,15 @@
 </head>
 
 <body>
-	<div id="content">
-		<header>
-		</header>
-		
-		<nav>
-		</nav>
-		
-		-->eingeloggt!<--
-		
-		<footer>
-			<small>
-				Copyright &copy;
-				<time datetime="2013">2013</time>	
-			</small>
-		</footer>
-	</div>
+	<nav class="navbar navbar-inverse" role="navigation" style="-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;">
+  		<ul class="nav navbar-nav navbar-right">
+	    	<li class="dropdown">
+		      	<a href="" class="dropdown-toggle" data-toggle="dropdown" style="margin-right:10px;"><?php echo $_SESSION['user'] ?><b class="caret"></b></a>
+		       	<ul class="dropdown-menu">
+		        	<li><a href="logout.php">Abmelden</a></li>
+		       	</ul>
+	  		</li>
+    	</ul>     
+	</nav>
 </body>
 </html>​
