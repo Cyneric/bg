@@ -8,11 +8,11 @@
       $hostname = $_SERVER['HTTP_HOST'];
       $path = dirname($_SERVER['PHP_SELF']);
 
-      // Benutzername und Passwort werden überprüft
-      if ($username == 'benjamin' && $passwort == 'geheim') {
+      // Benutzername und Passwort werden ï¿½berprï¿½ft
+      if ($username == 'test' && $passwort == 'test') {
        $_SESSION['angemeldet'] = true;
 
-       // Weiterleitung zur geschützten Startseite
+       // Weiterleitung zur geschï¿½tzten Startseite
        if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {
         if (php_sapi_name() == 'cgi') {
          header('Status: 303 See Other');
