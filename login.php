@@ -7,12 +7,12 @@
 
       $hostname = $_SERVER['HTTP_HOST'];
       $path = dirname($_SERVER['PHP_SELF']);
-
-      // Benutzername und Passwort werden �berpr�ft
+     
+     //check login data
       if ($username == 'test' && $passwort == 'test') {
        $_SESSION['angemeldet'] = true;
 
-       // Weiterleitung zur gesch�tzten Startseite
+       // forwarding to index
        if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {
         if (php_sapi_name() == 'cgi') {
          header('Status: 303 See Other');
