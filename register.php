@@ -17,7 +17,7 @@
 	</style>
 </head>
 <body>
-	<div class="container">   	
+	<div class="container" style="margin-top:10%;">   	
 		<div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         	<div class="panel panel-info" style="border-color:black">
             	<div class="panel-heading" style="background-color:black;color:white;border-color:black">

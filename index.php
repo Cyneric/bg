@@ -15,9 +15,9 @@
 
 <body>
 	<nav class="navbar navbar-inverse" role="navigation" style="-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;">
-  		<ul class="nav navbar-nav navbar-right">
+  		<ul class="nav navbar-nav navbar-right" style="margin-right:20px;">
 	    	<li class="dropdown">
-		      	<a href="" class="dropdown-toggle" data-toggle="dropdown" style="margin-right:10px;"><?php echo $_SESSION['user'] ?><b class="caret"></b></a>
+		      	<a href="" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['user'] ?><b class="caret"></b></a>
 		       	<ul class="dropdown-menu">
 		        	<li><a href="logout.php">Abmelden</a></li>
 		       	</ul>
