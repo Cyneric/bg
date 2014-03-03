@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>				
+﻿<?php include('auth.php'); ?>
+<!DOCTYPE html>				
 <html lang="de">															
 <head>		
 	<meta charset="utf-8">
