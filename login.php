@@ -39,8 +39,6 @@
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="shortcut icon" href="images/favicon.png" type="image/png" />
-	<link rel="icon" href="images/favicon.png" type="image/png" />
 	<style>
 		a:link { color: grey; } 
 		a:visited { color: grey; } 
@@ -75,7 +73,7 @@
                         <div class="form-group">
                         	<div class="col-md-12 control">
                             	<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%"> Noch kein Accout? 
-                                    <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">Registrieren</a>
+                                    <a href="register.php" onClick="$('#loginbox').hide(); $('#signupbox').show()">Registrieren</a>
                                 </div>
                             </div>
                        	</div>    
@@ -83,59 +81,6 @@
                 </div>                     
           	</div>  
         </div>
-        
-        
-        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        	<div class="panel panel-info" style="border-color:black">
-            	<div class="panel-heading" style="background-color:black;color:white;border-color:black">
-                	<div class="panel-title">Registrieren:</div>
-                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="" onclick="$('#signupbox').hide(); $('#loginbox').show()">Einloggen</a></div>
-                </div>  
-                <div class="panel-body" >
-                	<form action="login.php" id="signupform" class="form-horizontal" role="form">          
-	               		<div id="signupalert" style="display:none" class="alert alert-danger">
-	                    	<p>Error:</p>
-	                         <span></span>
-	                    </div>     
-	                    <div class="form-group">
-	                    	<label for="email" class="col-md-3 control-label">Benutzername</label>
-	                        <div class="col-md-9">
-	                        	<input type="text" class="form-control" name="user" placeholder="Benutzername">
-	                        </div>
-	                   	</div>                
-	                    <div class="form-group">
-	                    	<label for="email" class="col-md-3 control-label">Email</label>
-	                        <div class="col-md-9">
-	                        	<input type="text" class="form-control" name="email" placeholder="Email Addresse">
-	                        </div>
-	                   	</div>               
-	                    <div class="form-group">
-	                    	<label for="firstname" class="col-md-3 control-label">Vorname</label>
-	                        <div class="col-md-9">
-	                        	<input type="text" class="form-control" name="firstname" placeholder="Vorname">
-	                        </div>
-	                    </div>
-	                    <div class="form-group">
-	                       <label for="lastname" class="col-md-3 control-label">Nachname</label>
-	                    	<div class="col-md-9">
-	                        	<input type="text" class="form-control" name="lastname" placeholder="Nachname">
-	                        </div>
-	                    </div>
-	                    <div class="form-group">
-	                    	<label for="password" class="col-md-3 control-label">Passwort</label>
-	                        <div class="col-md-9">
-	                        	<input type="password" class="form-control" name="pass" placeholder="Passwort">
-	                        </div>
-	                    </div>
-	                    <div class="form-group">                                     
-	                    	<div class="col-md-offset-3 col-md-9">
-	                        	<button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Registrieren</button>
-	                        </div>
-	                    </div>       
-               		</form>
-            	</div>
-        	</div>              
-    	</div> 
     </div>
 </body>
 </html>

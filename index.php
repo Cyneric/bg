@@ -16,11 +16,12 @@
 <body>
 	<div id="content">
 		<header>
-			<a href="index.php"><img src="images/logo.png" alt=""></a>
 		</header>
 		
 		<nav>
 		</nav>
+		
+		-->eingeloggt!<--
 		
 		<footer>
 			<small>
