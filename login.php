@@ -18,7 +18,7 @@
 
       $dbuser = mysqli_real_escape_string($con, $username);
       $dbpass = mysqli_real_escape_string($con, $password);
-      
+
       $result = mysqli_query($con,"SELECT * FROM account WHERE username = '$dbuser' AND password = '$dbpass'");
       mysqli_close($con);
       
