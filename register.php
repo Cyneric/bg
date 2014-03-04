@@ -156,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	                        	<button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Registrieren</button>
 	                        </div>
 	                    </div>       
-               		</form>
+               		</form> 
             	</div>
         	</div>              
     	</div> 
