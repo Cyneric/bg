@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		$insert = TRUE;
 		
-		$con = mysqli_connect("localhost","root","root","browsergame");
+		$con = mysqli_connect("localhost","root","root","project");
 		if (mysqli_connect_errno()){
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
