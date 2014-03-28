@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			}
 		}
 		
-		if($insert == TRUE){
+		if($insert){
 			mysqli_query($con,"INSERT into account (username, password, email, first_name, last_name) VALUES ('$user', '$pass', '$email', '$first_name', '$last_name')");
 			$success = TRUE;
 		}
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		a:active { color: grey; } 
 	</style>
 </head>
-<?php if($success == FALSE){ ?>
+<?php if(!$success){ ?>
 <body>
 	<div class="container" style="margin-top:10%;">   	
 		<div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -109,13 +109,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>  
                 <div class="panel-body">
                 	<form action="register.php" method="post" id="signupform" class="form-horizontal" role="form">          
-	               		<?php if($error == TRUE){ echo"
+	               		<?php if($error){ echo"
 	               		<div id='signupalert' class='alert alert-danger'>
 	                    	<p>Fehler: ".$reason."</p>
 	                         <span></span>
 	                    </div>";
 						}?>
-						<?php if($success == TRUE){ echo"
+						<?php if($success){ echo"
 	               		<div id='signupalert' class='alert alert-success'>
 	                    	<p>Benutzer wurde erstellt, sie k&ouml;nnen sich jetzt anmelden!</p>
 	                         <span></span>
@@ -163,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </body>    
 <?php } ?>
-<?php if($success == TRUE){ ?>
+<?php if($success){ ?>
 <meta http-equiv="refresh" content="10; URL=login.php">
 <style>
 		a:link { color: #31CDF5; } 
