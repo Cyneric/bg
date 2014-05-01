@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	                    <div class="form-group">
 	                    	<label for="email" class="col-md-3 control-label">Email</label>
 	                        <div class="col-md-9">
-	                        	<input type="text" class="form-control" name="email" placeholder="Email Addresse">
+	                        	<input type="email" class="form-control" name="email" placeholder="Email Addresse">
 	                        </div>
 	                   	</div>               
 	                    <div class="form-group">
@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	                    <div class="form-group">
 	                    	<label for="password" class="col-md-3 control-label">Passwort</label>
 	                        <div class="col-md-9">
-	                        	<input type="text" class="form-control" name="pass" placeholder="Passwort">
+	                        	<input type="password" class="form-control" name="pass" placeholder="Passwort">
 	                        </div>
 	                    </div>
 	                    <div class="form-group">                                     
