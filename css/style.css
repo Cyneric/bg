@@ -1,0 +1,22 @@
+@import url("normalize.css");
+@import url(bootstrap.min.css);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+
+
+
+
+article, aside, details, figcaption, figure,
+	 footer, header, hgroup, main, nav, section, summary {
+	 display: block;
+	 }
+	 
+	 
+	 
+body{
+	background: url('../img/background.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
